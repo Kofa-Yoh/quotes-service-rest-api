@@ -1,0 +1,13 @@
+services:
+  quotes_app:
+    container_name: quotes_app
+    image: quotes_app
+    build: .
+    ports:
+      - "8081:8081"
+    environment:
+      - DATABASE_URL=jdbc:h2:mem:quotes_db
+      - DATABASE_USERNAME=root
+      - DATABASE_PASSWORD=root
+      - H2_URL=/h2-console
+      - SWAGGER_URL=/swagger
